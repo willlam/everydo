@@ -16,6 +16,7 @@
 		390179FF1CA19FF200224256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 390179FD1CA19FF200224256 /* LaunchScreen.storyboard */; };
 		39017A081CA1A07A00224256 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39017A071CA1A07A00224256 /* Todo.m */; };
 		39017A0B1CA1A59600224256 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39017A0A1CA1A59600224256 /* TableViewCell.m */; };
+		39017A0E1CA1D5FA00224256 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39017A0D1CA1D5FA00224256 /* AddItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		39017A071CA1A07A00224256 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		39017A091CA1A59600224256 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		39017A0A1CA1A59600224256 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		39017A0C1CA1D5FA00224256 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		39017A0D1CA1D5FA00224256 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				390179F31CA19FF100224256 /* MasterViewController.m */,
 				390179F51CA19FF100224256 /* DetailViewController.h */,
 				390179F61CA19FF100224256 /* DetailViewController.m */,
+				39017A0C1CA1D5FA00224256 /* AddItemViewController.h */,
+				39017A0D1CA1D5FA00224256 /* AddItemViewController.m */,
 				39017A061CA1A07A00224256 /* Todo.h */,
 				39017A071CA1A07A00224256 /* Todo.m */,
 				39017A091CA1A59600224256 /* TableViewCell.h */,
@@ -167,6 +172,7 @@
 			files = (
 				39017A081CA1A07A00224256 /* Todo.m in Sources */,
 				39017A0B1CA1A59600224256 /* TableViewCell.m in Sources */,
+				39017A0E1CA1D5FA00224256 /* AddItemViewController.m in Sources */,
 				390179F11CA19FF100224256 /* AppDelegate.m in Sources */,
 				390179F41CA19FF100224256 /* MasterViewController.m in Sources */,
 				390179EE1CA19FF100224256 /* main.m in Sources */,

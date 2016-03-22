@@ -15,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *priorityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *isCompletedLabel;
 
+
 @end
