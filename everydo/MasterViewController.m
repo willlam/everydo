@@ -8,10 +8,13 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "Todo.h"
+#import "TableViewCell.h"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+@property NSMutableArray *todoObjects;
 @end
 
 @implementation MasterViewController
@@ -23,6 +26,7 @@
 
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 	self.navigationItem.rightBarButtonItem = addButton;
+	[self prepareTodoObjects];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,6 +46,22 @@
 	[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+#pragma mark - Preparation
+
+
+// 1.
+
+- (void) prepareTodoObjects {
+	Todo *todo1 = [[Todo alloc] initWithTitle:@"Pick up milk" description:@"Pick up lactose free milk" priority:3 andIsCompleted:NO];
+	Todo *todo2 = [[Todo alloc] initWithTitle:@"Finish taxes" description:@"Complete by April 30, 2016 - talk to Amitabh" priority:1 andIsCompleted:NO];
+	Todo *todo3 = [[Todo alloc] initWithTitle:@"Finish EveryDo Assignment!" description:@"An assignment on how to do tableviews" priority:1 andIsCompleted:NO];
+	
+	self.todoObjects = [[NSMutableArray alloc] init];
+	
+	[self.todoObjects addObjectsFromArray:@[todo1, todo2, todo3]];
+	
+}
+
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -59,15 +79,32 @@
 	return 1;
 }
 
+// 2
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.objects.count;
+	return self.todoObjects.count;
+	
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+	
+	// get object associated with row
+	
+	Todo *todo = self.todoObjects[indexPath.row];
+	
+	
+	// get cell using identifier
+	TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TodoCell"];
 
-	NSDate *object = self.objects[indexPath.row];
-	cell.textLabel.text = [object description];
+	// NSDate *object = self.todoObjects[indexPath.row];
+	
+	// customize the cell
+	
+	cell.titleLabel.text = todo.title;
+	cell.descriptionLabel.text = todo.todoDescription;
+	cell.priorityLabel.text = @(todo.priority).stringValue;
+	// cell.isCompletedLabel.text = @(todo.priority).boolValue;
+	
 	return cell;
 }
 
@@ -84,5 +121,9 @@
 	    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
 	}
 }
+
+
+
+
 
 @end
